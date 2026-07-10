@@ -1,1 +1,43 @@
-
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Prompt',sans-serif}
+body{min-height:100vh;background:linear-gradient(-45deg,#ffd7eb,#ff8fcb,#d66cff,#9f6cff);background-size:400% 400%;animation:bg 12s ease infinite;color:#fff}
+@keyframes bg{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
+body:before,body:after{content:"";position:fixed;width:360px;height:360px;border-radius:50%;filter:blur(90px);opacity:.45;z-index:-1}
+body:before{background:#ff79c8;top:-120px;left:-120px}
+body:after{background:#8f6bff;right:-120px;bottom:-120px}
+nav{display:flex;justify-content:space-between;padding:22px 8%}
+nav ul{display:flex;gap:22px;list-style:none}nav a{color:#fff;text-decoration:none}
+.wrap{display:flex;justify-content:center;padding:40px 20px}
+.card{max-width:900px;width:100%;background:rgba(255,255,255,.16);backdrop-filter:blur(16px);border-radius:28px;padding:35px;border:1px solid rgba(255,255,255,.25)}
+.top{display:flex;gap:30px;align-items:center;flex-wrap:wrap}
+img{width:180px;height:180px;border-radius:50%;border:5px solid #fff;object-fit:cover;background:#fff}
+h1{font-size:42px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:30px}
+.box{background:rgba(255,255,255,.12);padding:20px;border-radius:18px}
+.box h3{margin-bottom:10px}
+.scroll{text-align:center;margin:35px 0 15px;animation:b 1.8s infinite}
+@keyframes b{50%{transform:translateY(8px)}}
+</style></head>
+<body>
+<nav><strong>Portfolio</strong><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="activities.html">Activities</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+<div class="wrap"><div class="card">
+<div class="top">
+<img src="images/profile.jpg" alt="Profile">
+<div><h1>About Me</h1><p>สวัสดีค่ะ ฉันชื่อ <b>ภิญญดา บุญเจริญ</b><br>นักเรียนชั้นมัธยมศึกษาปีที่ 6 ผู้สนใจด้านเภสัชศาสตร์</p></div>
+</div>
+<div class="grid">
+<div class="box"><h3>🎓 การศึกษา</h3><p>โรงเรียน : พานทอง<br>แผนการเรียน : วิทย์-คณิต</p></div>
+<div class="box"><h3>💻 Skills</h3><p>HTML<br>CSS<br>JavaScript<br>Canva</p></div>
+<div class="box"><h3>🎯 เป้าหมาย</h3><p>เข้าศึกษาคณะเภสัชศาสตร์</p></div>
+<div class="box"><h3>❤️ งานอดิเรก</h3><p>เรียนรู้สิ่งใหม่ๆ ฟังเพลง อ่านหนังสือ</p></div>
+</div>
+<div class="scroll">⬇ Scroll Down ⬇</div>
+</div></div>
+</body></html>
