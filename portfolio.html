@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfolio | My Works</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Prompt',sans-serif;
+}
+
+body{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+background:linear-gradient(-45deg,#ffd1ea,#ff8fcf,#d76bff,#9b6bff);
+background-size:400% 400%;
+animation:bg 12s ease infinite;
+overflow-x:hidden;
+color:#fff;
+}
+
+@keyframes bg{
+0%{background-position:0 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0 50%;}
+}
+
+body::before,
+body::after{
+content:"";
+position:fixed;
+width:380px;
+height:380px;
+border-radius:50%;
+filter:blur(90px);
+opacity:.5;
+z-index:-1;
+}
+
+body::before{
+background:#ff77c8;
+top:-120px;
+left:-80px;
+animation:f1 10s ease-in-out infinite;
+}
+
+body::after{
+background:#9b6bff;
+bottom:-120px;
+right:-80px;
+animation:f2 12s ease-in-out infinite;
+}
+
+@keyframes f1{
+50%{
+transform:translate(120px,80px);
+}
+}
+
+@keyframes f2{
+50%{
+transform:translate(-120px,-80px);
+}
+}
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(12px);
+z-index:999;
+}
+
+nav b{
+font-size:28px;
+}
+
+nav ul{
+display:flex;
+gap:24px;
+list-style:none;
+}
+
+nav a{
+color:#fff;
+text-decoration:none;
+font-weight:500;
+transition:.3s;
+}
+
+nav a:hover{
+color:#ffe3f8;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:120px auto 60px;
+}
+
+.title{
+text-align:center;
+margin-bottom:50px;
+}
+
+.title h1{
+font-size:48px;
+margin-bottom:10px;
+}
+
+.title p{
+font-size:18px;
+opacity:.9;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+.card{
+background:rgba(255,255,255,.18);
+backdrop-filter:blur(16px);
+border:1px solid rgba(255,255,255,.3);
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 15px 30px rgba(0,0,0,.2);
+transition:.35s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 25px 40px rgba(0,0,0,.3);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.content{
+padding:25px;
+}
+
+.content h2{
+font-size:24px;
+margin-bottom:10px;
+}
+
+.content p{
+line-height:1.7;
+margin-bottom:20px;
+}
+
+.btn{
+display:inline-block;
+padding:12px 28px;
+border-radius:40px;
+background:#fff;
+color:#c04bff;
+text-decoration:none;
+font-weight:700;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+footer{
+text-align:center;
+padding:40px 0;
+font-size:15px;
+opacity:.9;
+}
+
+@media(max-width:768px){
+
+nav{
+padding:15px 5%;
+}
+
+nav ul{
+gap:15px;
+font-size:14px;
+}
+
+.title h1{
+font-size:36px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div><b>Portfolio</b></div>
+
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="portfolio.html">Portfolio</a></li>
+<li><a href="activities.html">Activities</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+
+</nav>
+
+<div class="container">
+
+<div class="title">
+<h1>My Portfolio</h1>
+<p>ผลงานและโครงการที่ภาคภูมิใจ</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<img src="images/portfolio1.jpg" alt="Portfolio 1">
+<div class="content">
+<h2>Project 01</h2>
+<p>ใส่รายละเอียดผลงานของคุณที่นี่ สามารถอธิบายสั้น ๆ เกี่ยวกับโครงการนี้ได้</p>
+<a href="#" class="btn">ดูเพิ่มเติม</a>
+</div>
+</div>
+
+<div class="card">
+<img src="images/portfolio2.jpg" alt="Portfolio 2">
+<div class="content">
+<h2>Project 02</h2>
+<p>ใส่รายละเอียดผลงานของคุณที่นี่ พร้อมรูปภาพประกอบ</p>
+<a href="#" class="btn">ดูเพิ่มเติม</a>
+</div>
+</div>
+ <div class="card">
+    <img src="images/portfolio3.jpg" alt="Portfolio 3">
+    <div class="content">
+        <h2>Project 03</h2>
+        <p>ใส่รายละเอียดของผลงานชิ้นนี้ เช่น กิจกรรม ผลงานแข่งขัน หรือโครงงานที่ต้องการนำเสนอ</p>
+        <a href="#" class="btn">ดูเพิ่มเติม</a>
+    </div>
+</div>
+
+<div class="card">
+    <img src="images/portfolio4.jpg" alt="Portfolio 4">
+    <div class="content">
+        <h2>Project 04</h2>
+        <p>สามารถเปลี่ยนเป็นเกียรติบัตร ผลงานจิตอาสา หรือกิจกรรมเด่นของคุณได้</p>
+        <a href="#" class="btn">ดูเพิ่มเติม</a>
+    </div>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+    © 2025 Pinyada Booncharoen | Student Portfolio
+</footer>
+
+</body>
+</html> 
