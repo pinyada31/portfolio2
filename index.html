@@ -23,9 +23,17 @@ body:before{background:#ff77c8;top:-120px;left:-80px;animation:f1 10s ease-in-ou
 body:after{background:#9b6bff;bottom:-120px;right:-80px;animation:f2 12s ease-in-out infinite}
 @keyframes f1{50%{transform:translate(120px,80px)}}
 @keyframes f2{50%{transform:translate(-120px,-80px)}}
-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 8%}
-nav ul{display:flex;gap:24px;list-style:none}
-nav a{color:#fff;text-decoration:none}
+<nav>
+    <div><b>Portfolio</b></div>
+
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="activities.html">Activities</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
 .hero{flex:1;display:flex;justify-content:center;align-items:center;padding:20px}
 .card{
 width:min(500px,92%);
