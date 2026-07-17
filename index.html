@@ -1,247 +1,34 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Portfolio | Home</title>
 
+<link rel="stylesheet" href="css/style.css">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Prompt',sans-serif;
-}
-
-body{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-background:linear-gradient(-45deg,#ffd1ea,#ff8fcf,#d76bff,#9b6bff);
-background-size:400% 400%;
-animation:bg 12s ease infinite;
-overflow:hidden;
-color:#fff;
-}
-
-@keyframes bg{
-0%{background-position:0 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0 50%;}
-}
-
-body::before,
-body::after{
-content:"";
-position:fixed;
-width:380px;
-height:380px;
-border-radius:50%;
-filter:blur(90px);
-opacity:.5;
-z-index:-1;
-}
-
-body::before{
-background:#ff77c8;
-top:-120px;
-left:-80px;
-animation:f1 10s ease-in-out infinite;
-}
-
-body::after{
-background:#9b6bff;
-bottom:-120px;
-right:-80px;
-animation:f2 12s ease-in-out infinite;
-}
-
-@keyframes f1{
-50%{
-transform:translate(120px,80px);
-}
-}
-
-@keyframes f2{
-50%{
-transform:translate(-120px,-80px);
-}
-}
-
-/* ---------- NAVBAR ---------- */
-
-nav{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 8%;
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(12px);
-z-index:999;
-}
-nav b{
-font-size:28px;
-font-weight:700;
-letter-spacing:1px;
-}
-
-nav ul{
-display:flex;
-gap:24px;
-list-style:none;
-}
-
-nav a{
-color:#fff;
-text-decoration:none;
-font-weight:500;
-transition:.3s;
-}
-
-nav a:hover{
-color:#ffe3f8;
-}
-
-.hero{
-flex:1;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:120px 20px 40px;
-}
-
-.card{
-width:min(500px,92%);
-background:rgba(255,255,255,.18);
-backdrop-filter:blur(16px);
-border:1px solid rgba(255,255,255,.3);
-border-radius:28px;
-padding:40px;
-text-align:center;
-box-shadow:0 20px 40px rgba(0,0,0,.2);
-}
-.profile{
-width:170px;
-height:170px;
-border-radius:50%;
-border:5px solid #fff;
-object-fit:cover;
-background:#fff;
-margin-bottom:20px;
-}
-
-h1{
-font-size:42px;
-background:linear-gradient(90deg,#fff,#ffe3f8,#ffc2ea);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-h2{
-margin:10px 0;
-}
-
-p{
-line-height:1.7;
-margin-top:10px;
-}
-
-.buttons{
-margin-top:28px;
-}
-
-.btn{
-display:inline-block;
-margin:8px;
-padding:14px 30px;
-border-radius:40px;
-background:#fff;
-color:#c04bff;
-text-decoration:none;
-font-weight:700;
-transition:.3s;
-}
-
-.btn:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 20px rgba(255,255,255,.3);
-}
-
-.btn.out{
-background:transparent;
-color:#fff;
-border:2px solid #fff;
-}
-
-.scroll{
-position:fixed;
-left:50%;
-bottom:20px;
-transform:translateX(-50%);
-display:flex;
-flex-direction:column;
-align-items:center;
-animation:updown 1.8s infinite;
-}
-
-.mouse{
-width:28px;
-height:46px;
-border:2px solid #fff;
-border-radius:20px;
-margin-top:8px;
-}
-
-.wheel{
-width:5px;
-height:10px;
-background:#fff;
-border-radius:3px;
-margin:7px auto;
-animation:wheel 1.6s infinite;
-}
-
-@keyframes wheel{
-0%{
-opacity:1;
-transform:translateY(0);
-}
-
-100%{
-opacity:0;
-transform:translateY(14px);
-}
-}
-
-@keyframes updown{
-50%{
-transform:translateX(-50%) translateY(8px);
-}
-}
-
-</style>
 </head>
 
 <body>
 
-<nav>
+<header>
 
-<div><b>Portfolio</b></div>
+<a href="index.html" class="logo">
+Portfolio
+</a>
+
+<nav>
 
 <ul>
 
-<li><a href="index.html">Home</a></li>
+<li><a href="index.html" class="active">Home</a></li>
 
 <li><a href="about.html">About</a></li>
 
@@ -255,42 +42,393 @@ transform:translateX(-50%) translateY(8px);
 
 </nav>
 
+</header>
+
 <section class="hero">
 
-<div class="card">
+<div class="glass">
 
-<img src="images/profile.jpg" class="profile" alt="Profile">
+<img src="images/profile.jpg" class="profile">
 
 <h1>ภิญญดา บุญเจริญ</h1>
 
 <h2>Student Portfolio</h2>
 
-<p>นักเรียนชั้นมัธยมศึกษาปีที่ 6</p>
+<p>
+ยินดีต้อนรับสู่เว็บไซต์ Portfolio
+สำหรับใช้ยื่นเข้าศึกษาต่อ
+</p>
 
-<p>ยินดีต้อนรับสู่เว็บไซต์ Portfolio สำหรับใช้ยื่นเข้าศึกษาต่อ</p>
+<div class="btn-group">
 
-<div class="buttons">
+<a href="about.html" class="btn">
+About Me
+</a>
 
-<a href="about.html" class="btn">About Me</a>
-
-<a href="portfolio.html" class="btn out">Portfolio</a>
+<a href="portfolio.html" class="btn outline">
+Portfolio
+</a>
 
 </div>
 
 </div>
 
 </section>
-<div class="scroll">
+/* ==========================================
+   Portfolio V2
+   Theme : Pink Aurora Glassmorphism
+========================================== */
 
-<div>Scroll Down</div>
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap');
 
-<div class="mouse">
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Prompt',sans-serif;
+    scroll-behavior:smooth;
+}
 
-<div class="wheel"></div>
+html{
+    scroll-behavior:smooth;
+}
 
-</div>
+body{
 
-</div>
+    min-height:100vh;
 
-</body>
-</html>
+    color:#fff;
+
+    overflow-x:hidden;
+
+    background:linear-gradient(
+    -45deg,
+    #ffd6ea,
+    #ff99d6,
+    #d77cff,
+    #8b7dff
+    );
+
+    background-size:400% 400%;
+
+    animation:bg 15s ease infinite;
+
+}
+
+/* ================= Background Animation ================= */
+
+@keyframes bg{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+/* ================= Aurora ================= */
+
+body::before,
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:450px;
+height:450px;
+
+border-radius:50%;
+
+filter:blur(100px);
+
+opacity:.45;
+
+z-index:-1;
+
+}
+
+body::before{
+
+background:#ff7cc8;
+
+top:-150px;
+
+left:-120px;
+
+animation:aurora1 12s infinite ease-in-out;
+
+}
+
+body::after{
+
+background:#8b7dff;
+
+right:-120px;
+
+bottom:-150px;
+
+animation:aurora2 15s infinite ease-in-out;
+
+}
+
+@keyframes aurora1{
+
+50%{
+transform:translate(120px,80px);
+}
+
+}
+
+@keyframes aurora2{
+
+50%{
+transform:translate(-120px,-80px);
+}
+
+}
+
+/* ================= Header ================= */
+
+header{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+padding:18px 8%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+border-bottom:1px solid rgba(255,255,255,.15);
+
+z-index:999;
+
+}
+
+.logo{
+
+font-size:30px;
+
+font-weight:700;
+
+color:white;
+
+text-decoration:none;
+
+letter-spacing:1px;
+
+}
+
+nav ul{
+
+display:flex;
+
+list-style:none;
+
+gap:28px;
+
+}
+
+nav ul li a{
+
+color:white;
+
+text-decoration:none;
+
+font-weight:500;
+
+transition:.35s;
+
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+
+color:#ffe4f6;
+
+}
+/* ================= Hero ================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:120px 20px 60px;
+}
+
+/* ================= Glass Card ================= */
+
+.glass{
+
+    width:min(520px,95%);
+
+    background:rgba(255,255,255,.15);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:30px;
+
+    padding:45px;
+
+    text-align:center;
+
+    box-shadow:0 25px 45px rgba(0,0,0,.2);
+
+    animation:fadeUp 1s ease;
+
+}
+
+/* ================= Profile ================= */
+
+.profile{
+
+    width:180px;
+
+    height:180px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:5px solid rgba(255,255,255,.9);
+
+    margin-bottom:20px;
+
+    box-shadow:0 15px 35px rgba(255,255,255,.25);
+
+}
+
+/* ================= Text ================= */
+
+.glass h1{
+
+    font-size:42px;
+
+    margin-bottom:10px;
+
+}
+
+.glass h2{
+
+    font-weight:400;
+
+    margin-bottom:15px;
+
+    color:#fff4fb;
+
+}
+
+.glass p{
+
+    line-height:1.8;
+
+    opacity:.95;
+
+}
+
+/* ================= Buttons ================= */
+
+.btn-group{
+
+    margin-top:35px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+}
+
+.btn{
+
+    display:inline-block;
+
+    padding:14px 32px;
+
+    border-radius:50px;
+
+    background:white;
+
+    color:#c64cff;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 30px rgba(255,255,255,.3);
+
+}
+
+.btn.outline{
+
+    background:transparent;
+
+    border:2px solid white;
+
+    color:white;
+
+}
+
+.btn.outline:hover{
+
+    background:white;
+
+    color:#c64cff;
+
+}
+
+/* ================= Animation ================= */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}  
