@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,279 +11,888 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
+/* ================= RESET ================= */
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Prompt',sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Prompt',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-background:linear-gradient(-45deg,#ffd1ea,#ff8fcf,#d76bff,#9b6bff);
-background-size:400% 400%;
-animation:bg 12s ease infinite;
-overflow:hidden;
-color:#fff;
+
+    min-height:100vh;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        -45deg,
+        #ffd1ea,
+        #ff8fcf,
+        #d76bff,
+        #8f7bff
+    );
+
+    background-size:400% 400%;
+
+    animation:gradientMove 14s ease infinite;
+
+    overflow-x:hidden;
+
 }
 
-@keyframes bg{
-0%{background-position:0 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0 50%;}
+
+/* ================= BACKGROUND ANIMATION ================= */
+
+@keyframes gradientMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
 }
 
-body::before,
-body::after{
-content:"";
-position:fixed;
-width:380px;
-height:380px;
-border-radius:50%;
-filter:blur(90px);
-opacity:.5;
-z-index:-1;
-}
 
 body::before{
-background:#ff77c8;
-top:-120px;
-left:-80px;
-animation:f1 10s ease-in-out infinite;
+
+    content:"";
+
+    position:fixed;
+
+    width:450px;
+    height:450px;
+
+    top:-160px;
+    left:-130px;
+
+    border-radius:50%;
+
+    background:#ff62c5;
+
+    filter:blur(100px);
+
+    opacity:.45;
+
+    z-index:-2;
+
+    animation:auroraOne 12s ease-in-out infinite;
+
 }
+
 
 body::after{
-background:#9b6bff;
-bottom:-120px;
-right:-80px;
-animation:f2 12s ease-in-out infinite;
+
+    content:"";
+
+    position:fixed;
+
+    width:450px;
+    height:450px;
+
+    right:-150px;
+    bottom:-170px;
+
+    border-radius:50%;
+
+    background:#806dff;
+
+    filter:blur(100px);
+
+    opacity:.45;
+
+    z-index:-2;
+
+    animation:auroraTwo 14s ease-in-out infinite;
+
 }
 
-@keyframes f1{
-50%{
-transform:translate(120px,80px);
-}
+
+@keyframes auroraOne{
+
+    50%{
+        transform:translate(150px,100px);
+    }
+
 }
 
-@keyframes f2{
-50%{
-transform:translate(-120px,-80px);
-}
+
+@keyframes auroraTwo{
+
+    50%{
+        transform:translate(-130px,-100px);
+    }
+
 }
 
-/* ---------- NAVBAR ---------- */
 
-nav{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 8%;
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(12px);
-z-index:999;
+/* ================= FLOATING CIRCLES ================= */
+
+.floating{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(5px);
+
+    z-index:-1;
+
 }
 
-nav b{
-font-size:28px;
+
+.floating.one{
+
+    width:90px;
+    height:90px;
+
+    top:22%;
+    left:8%;
+
+    animation:floatOne 8s ease-in-out infinite;
+
 }
+
+
+.floating.two{
+
+    width:55px;
+    height:55px;
+
+    right:12%;
+    top:65%;
+
+    animation:floatTwo 7s ease-in-out infinite;
+
+}
+
+
+.floating.three{
+
+    width:35px;
+    height:35px;
+
+    right:25%;
+    top:35%;
+
+    animation:floatThree 6s ease-in-out infinite;
+
+}
+
+
+@keyframes floatOne{
+
+    50%{
+        transform:translate(40px,-50px);
+    }
+
+}
+
+
+@keyframes floatTwo{
+
+    50%{
+        transform:translate(-30px,40px);
+    }
+
+}
+
+
+@keyframes floatThree{
+
+    50%{
+        transform:translate(25px,-30px);
+    }
+
+}
+
+
+/* ================= NAVBAR ================= */
+
+header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 7%;
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,.20);
+
+}
+
+
+.logo{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+}
+
 
 nav ul{
-display:flex;
-gap:24px;
-list-style:none;
+
+    display:flex;
+
+    gap:22px;
+
+    list-style:none;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
 }
+
 
 nav a{
-color:#fff;
-text-decoration:none;
-font-weight:500;
-transition:.3s;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    transition:.3s;
+
 }
+
 
 nav a:hover{
-color:#ffe3f8;
+
+    color:#ffe3f6;
+
+    text-shadow:0 0 12px white;
+
 }
+
+
+/* ================= HERO ================= */
 
 .hero{
-flex:1;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:120px 20px 40px;
+
+    min-height:100vh;
+
+    padding:130px 20px 80px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
 }
 
-.card{
-width:min(500px,92%);
-background:rgba(255,255,255,.18);
-backdrop-filter:blur(16px);
-border:1px solid rgba(255,255,255,.3);
-border-radius:28px;
-padding:40px;
-text-align:center;
-box-shadow:0 20px 40px rgba(0,0,0,.2);
+
+.hero-content{
+
+    max-width:780px;
+
+    animation:fadeUp 1s ease;
+
 }
+
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* ================= PROFILE ================= */
+
+.profile-box{
+
+    width:200px;
+
+    height:200px;
+
+    margin:0 auto 30px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
+}
+
+
+.profile-ring{
+
+    position:absolute;
+
+    inset:-12px;
+
+    border:2px solid rgba(255,255,255,.8);
+
+    border-top-color:transparent;
+
+    border-radius:50%;
+
+    animation:spin 8s linear infinite;
+
+}
+
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
 .profile{
-width:170px;
-height:170px;
-border-radius:50%;
-border:5px solid #fff;
-object-fit:cover;
-background:#fff;
-margin-bottom:20px;
+
+    width:180px;
+
+    height:180px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:5px solid white;
+
+    box-shadow:
+
+    0 0 25px rgba(255,255,255,.5),
+
+    0 0 60px rgba(255,150,230,.4);
+
 }
 
-h1{
-font-size:42px;
-background:linear-gradient(90deg,#fff,#ffe3f8,#ffc2ea);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+
+/* ================= TEXT ================= */
+
+.hero small{
+
+    letter-spacing:4px;
+
+    font-size:12px;
+
+    opacity:.9;
+
 }
 
-h2{
-margin:10px 0;
+
+.hero h1{
+
+    font-size:clamp(40px,7vw,72px);
+
+    margin:12px 0;
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        white,
+
+        #ffe0f5,
+
+        white
+
+    );
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
 }
 
-p{
-line-height:1.7;
-margin-top:10px;
+
+.hero h2{
+
+    font-size:25px;
+
+    font-weight:400;
+
+    margin-bottom:20px;
+
 }
+
+
+.hero p{
+
+    max-width:650px;
+
+    margin:auto;
+
+    line-height:1.9;
+
+}
+
+
+/* ================= BUTTONS ================= */
 
 .buttons{
-margin-top:28px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin-top:32px;
+
 }
+
 
 .btn{
-display:inline-block;
-margin:8px;
-padding:14px 30px;
-border-radius:40px;
-background:#fff;
-color:#c04bff;
-text-decoration:none;
-font-weight:700;
-transition:.3s;
+
+    display:inline-block;
+
+    padding:14px 32px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.35s;
+
 }
+
+
+.btn.primary{
+
+    background:white;
+
+    color:#b94cff;
+
+}
+
+
+.btn.outline{
+
+    color:white;
+
+    border:1px solid white;
+
+}
+
 
 .btn:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 20px rgba(255,255,255,.3);
+
+    transform:translateY(-6px);
+
+    box-shadow:
+
+    0 15px 30px rgba(255,255,255,.3);
+
 }
 
-.btn.out{
-background:transparent;
-color:#fff;
-border:2px solid #fff;
+
+/* ================= SCROLL ================= */
+
+.scroll-down{
+
+    position:absolute;
+
+    bottom:25px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    text-align:center;
+
+    font-size:12px;
+
+    color:white;
+
+    text-decoration:none;
+
+    animation:bounce 1.8s infinite;
+
 }
 
-.scroll{
-position:fixed;
-left:50%;
-bottom:20px;
-transform:translateX(-50%);
-display:flex;
-flex-direction:column;
-align-items:center;
-animation:updown 1.8s infinite;
+
+@keyframes bounce{
+
+    50%{
+
+        transform:translate(-50%,8px);
+
+    }
+
 }
+
 
 .mouse{
-width:28px;
-height:46px;
-border:2px solid #fff;
-border-radius:20px;
-margin-top:8px;
+
+    width:27px;
+
+    height:43px;
+
+    border:2px solid white;
+
+    border-radius:20px;
+
+    margin:8px auto;
+
 }
+
 
 .wheel{
-width:5px;
-height:10px;
-background:#fff;
-border-radius:3px;
-margin:7px auto;
-animation:wheel 1.6s infinite;
+
+    width:4px;
+
+    height:8px;
+
+    background:white;
+
+    border-radius:5px;
+
+    margin:7px auto;
+
+    animation:wheel 1.5s infinite;
+
 }
+
 
 @keyframes wheel{
-0%{
-opacity:1;
-transform:translateY(0);
+
+    to{
+
+        opacity:0;
+
+        transform:translateY(12px);
+
+    }
+
 }
 
-100%{
-opacity:0;
-transform:translateY(14px);
-}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+    header{
+
+        padding:15px 4%;
+
+        gap:15px;
+
+    }
+
+    nav ul{
+
+        gap:12px;
+
+    }
+
 }
 
-@keyframes updown{
-50%{
-transform:translateX(-50%) translateY(8px);
-}
+
+@media(max-width:650px){
+
+    header{
+
+        position:relative;
+
+        flex-direction:column;
+
+    }
+
+    .hero{
+
+        padding-top:60px;
+
+    }
+
+    nav ul{
+
+        gap:9px;
+
+    }
+
+    nav a{
+
+        font-size:12px;
+
+    }
+
+    .profile-box{
+
+        width:170px;
+
+        height:170px;
+
+    }
+
+    .profile{
+
+        width:155px;
+
+        height:155px;
+
+    }
+
 }
 
 </style>
+
 </head>
+
 
 <body>
 
-<nav>
 
-<div><b>Portfolio</b></div>
+<!-- FLOATING DECORATION -->
+
+<div class="floating one"></div>
+
+<div class="floating two"></div>
+
+<div class="floating three"></div>
+
+
+<!-- NAVBAR -->
+
+<header>
+
+
+<a href="index.html" class="logo">
+
+Portfolio
+
+</a>
+
+
+<nav>
 
 <ul>
 
-<li><a href="index.html">Home</a></li>
 
-<li><a href="about.html">About</a></li>
+<li>
 
-<li><a href="portfolio.html">Portfolio</a></li>
+<a href="index.html">
 
-<li><a href="activities.html">Activities</a></li>
+Home
 
-<li><a href="contact.html">Contact</a></li>
+</a>
+
+</li>
+
+
+<li>
+
+<a href="about.html">
+
+About
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="education.html">
+
+Education
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="portfolio.html">
+
+Portfolio
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="activities.html">
+
+Activities
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="contact.html">
+
+Contact
+
+</a>
+
+</li>
+
 
 </ul>
 
 </nav>
 
+
+</header>
+
+
+<!-- HERO -->
+
 <section class="hero">
 
-<div class="card">
 
-<img src="images/profile.jpg" class="profile" alt="Profile">
+<div class="hero-content">
 
-<h1>ภิญญดา บุญเจริญ</h1>
 
-<h2>Student Portfolio</h2>
+<div class="profile-box">
 
-<p>นักเรียนชั้นมัธยมศึกษาปีที่ 6</p>
 
-<p>ยินดีต้อนรับสู่เว็บไซต์ Portfolio สำหรับใช้ยื่นเข้าศึกษาต่อ</p>
+<div class="profile-ring"></div>
+
+
+<img
+
+src="images/profile.jpg"
+
+alt="Profile"
+
+class="profile"
+
+
+>
+
+
+</div>
+
+
+<small>
+
+WELCOME TO MY PORTFOLIO
+
+</small>
+
+
+<h1>
+
+ภิญญดา บุญเจริญ
+
+</h1>
+
+
+<h2>
+
+Student Portfolio
+
+</h2>
+
+
+<p>
+
+สวัสดีค่ะ ยินดีต้อนรับเข้าสู่เว็บไซต์ Portfolio
+ของฉัน เว็บไซต์นี้รวบรวมข้อมูลเกี่ยวกับตัวฉัน
+ประวัติการศึกษา ผลงาน และกิจกรรมต่าง ๆ
+
+</p>
+
 
 <div class="buttons">
 
-<a href="about.html" class="btn">About Me</a>
 
-<a href="portfolio.html" class="btn out">Portfolio</a>
+<a href="about.html" class="btn primary">
+
+About Me
+
+</a>
+
+
+<a href="portfolio.html" class="btn outline">
+
+Explore Portfolio
+
+</a>
+
 
 </div>
 
+
 </div>
 
-</section>
-<div class="scroll">
 
-<div>Scroll Down</div>
+<a href="#bottom" class="scroll-down">
+
+Scroll Down
 
 <div class="mouse">
 
@@ -289,7 +900,15 @@ transform:translateX(-50%) translateY(8px);
 
 </div>
 
-</div>
+</a>
+
+
+</section>
+
+
+<div id="bottom"></div>
+
 
 </body>
+
 </html>
