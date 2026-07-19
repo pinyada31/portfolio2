@@ -15,8 +15,6 @@
 
 <style>
 
-/* ================= RESET ================= */
-
 *{
     margin:0;
     padding:0;
@@ -45,16 +43,13 @@ body{
 
     background-size:400% 400%;
 
-    animation:gradientMove 14s ease infinite;
+    animation:bg 14s ease infinite;
 
     overflow-x:hidden;
 
 }
 
-
-/* ================= BACKGROUND ANIMATION ================= */
-
-@keyframes gradientMove{
+@keyframes bg{
 
     0%{
         background-position:0% 50%;
@@ -70,62 +65,49 @@ body{
 
 }
 
-
-body::before{
-
-    content:"";
-
-    position:fixed;
-
-    width:450px;
-    height:450px;
-
-    top:-160px;
-    left:-130px;
-
-    border-radius:50%;
-
-    background:#ff62c5;
-
-    filter:blur(100px);
-
-    opacity:.45;
-
-    z-index:-2;
-
-    animation:auroraOne 12s ease-in-out infinite;
-
-}
-
-
+body::before,
 body::after{
 
     content:"";
 
     position:fixed;
 
-    width:450px;
-    height:450px;
-
-    right:-150px;
-    bottom:-170px;
+    width:500px;
+    height:500px;
 
     border-radius:50%;
-
-    background:#806dff;
 
     filter:blur(100px);
 
     opacity:.45;
 
-    z-index:-2;
-
-    animation:auroraTwo 14s ease-in-out infinite;
+    z-index:-1;
 
 }
 
+body::before{
 
-@keyframes auroraOne{
+    background:#ff63c5;
+
+    top:-180px;
+    left:-150px;
+
+    animation:aurora1 12s ease-in-out infinite;
+
+}
+
+body::after{
+
+    background:#806dff;
+
+    right:-160px;
+    bottom:-180px;
+
+    animation:aurora2 14s ease-in-out infinite;
+
+}
+
+@keyframes aurora1{
 
     50%{
         transform:translate(150px,100px);
@@ -133,94 +115,10 @@ body::after{
 
 }
 
-
-@keyframes auroraTwo{
-
-    50%{
-        transform:translate(-130px,-100px);
-    }
-
-}
-
-
-/* ================= FLOATING CIRCLES ================= */
-
-.floating{
-
-    position:fixed;
-
-    border-radius:50%;
-
-    background:rgba(255,255,255,.15);
-
-    backdrop-filter:blur(5px);
-
-    z-index:-1;
-
-}
-
-
-.floating.one{
-
-    width:90px;
-    height:90px;
-
-    top:22%;
-    left:8%;
-
-    animation:floatOne 8s ease-in-out infinite;
-
-}
-
-
-.floating.two{
-
-    width:55px;
-    height:55px;
-
-    right:12%;
-    top:65%;
-
-    animation:floatTwo 7s ease-in-out infinite;
-
-}
-
-
-.floating.three{
-
-    width:35px;
-    height:35px;
-
-    right:25%;
-    top:35%;
-
-    animation:floatThree 6s ease-in-out infinite;
-
-}
-
-
-@keyframes floatOne{
+@keyframes aurora2{
 
     50%{
-        transform:translate(40px,-50px);
-    }
-
-}
-
-
-@keyframes floatTwo{
-
-    50%{
-        transform:translate(-30px,40px);
-    }
-
-}
-
-
-@keyframes floatThree{
-
-    50%{
-        transform:translate(25px,-30px);
+        transform:translate(-150px,-100px);
     }
 
 }
@@ -232,10 +130,11 @@ header{
 
     position:fixed;
 
-    top:0;
-    left:0;
+    top:15px;
 
-    width:100%;
+    left:7%;
+
+    right:7%;
 
     z-index:1000;
 
@@ -245,16 +144,19 @@ header{
 
     align-items:center;
 
-    padding:18px 7%;
+    padding:18px 30px;
 
-    background:rgba(255,255,255,.10);
+    border-radius:20px;
+
+    background:rgba(255,255,255,.16);
+
+    border:1px solid rgba(255,255,255,.35);
 
     backdrop-filter:blur(18px);
 
-    border-bottom:1px solid rgba(255,255,255,.20);
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
 
 }
-
 
 .logo{
 
@@ -266,25 +168,17 @@ header{
 
     font-weight:700;
 
-    letter-spacing:1px;
-
 }
-
 
 nav ul{
 
     display:flex;
 
-    gap:22px;
+    gap:28px;
 
     list-style:none;
 
-    flex-wrap:wrap;
-
-    justify-content:center;
-
 }
-
 
 nav a{
 
@@ -292,119 +186,56 @@ nav a{
 
     text-decoration:none;
 
-    font-size:15px;
-
     transition:.3s;
 
 }
 
-
 nav a:hover{
 
-    color:#ffe3f6;
+    color:#ffe0f5;
 
     text-shadow:0 0 12px white;
 
 }
 
 
-/* ================= HERO ================= */
+/* ================= HOME ================= */
 
 .hero{
 
     min-height:100vh;
 
-    padding:130px 20px 80px;
-
     display:flex;
 
     justify-content:center;
 
     align-items:center;
+
+    padding:150px 7% 80px;
+
+}
+
+.hero-card{
+
+    max-width:850px;
+
+    width:100%;
+
+    padding:55px;
 
     text-align:center;
 
-}
+    background:rgba(255,255,255,.16);
 
+    border:1px solid rgba(255,255,255,.35);
 
-.hero-content{
+    border-radius:30px;
 
-    max-width:780px;
+    backdrop-filter:blur(18px);
 
-    animation:fadeUp 1s ease;
-
-}
-
-
-@keyframes fadeUp{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(35px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
+    box-shadow:0 25px 60px rgba(0,0,0,.16);
 
 }
-
-
-/* ================= PROFILE ================= */
-
-.profile-box{
-
-    width:200px;
-
-    height:200px;
-
-    margin:0 auto 30px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    position:relative;
-
-}
-
-
-.profile-ring{
-
-    position:absolute;
-
-    inset:-12px;
-
-    border:2px solid rgba(255,255,255,.8);
-
-    border-top-color:transparent;
-
-    border-radius:50%;
-
-    animation:spin 8s linear infinite;
-
-}
-
-
-@keyframes spin{
-
-    to{
-
-        transform:rotate(360deg);
-
-    }
-
-}
-
 
 .profile{
 
@@ -412,39 +243,23 @@ nav a:hover{
 
     height:180px;
 
-    object-fit:cover;
-
     border-radius:50%;
+
+    object-fit:cover;
 
     border:5px solid white;
 
-    box-shadow:
+    margin-bottom:25px;
 
-    0 0 25px rgba(255,255,255,.5),
-
-    0 0 60px rgba(255,150,230,.4);
+    box-shadow:0 0 35px rgba(255,255,255,.4);
 
 }
 
+.hero-card h1{
 
-/* ================= TEXT ================= */
+    font-size:clamp(40px,7vw,70px);
 
-.hero small{
-
-    letter-spacing:4px;
-
-    font-size:12px;
-
-    opacity:.9;
-
-}
-
-
-.hero h1{
-
-    font-size:clamp(40px,7vw,72px);
-
-    margin:12px 0;
+    margin-bottom:10px;
 
     background:
 
@@ -462,27 +277,21 @@ nav a:hover{
 
     -webkit-background-clip:text;
 
-    color:transparent;
+    -webkit-text-fill-color:transparent;
 
 }
 
-
-.hero h2{
+.hero-card h2{
 
     font-size:25px;
 
-    font-weight:400;
-
-    margin-bottom:20px;
+    margin-bottom:15px;
 
 }
 
+.hero-card p{
 
-.hero p{
-
-    max-width:650px;
-
-    margin:auto;
+    font-size:18px;
 
     line-height:1.9;
 
@@ -493,68 +302,54 @@ nav a:hover{
 
 .buttons{
 
-    display:flex;
-
-    justify-content:center;
-
-    gap:15px;
-
-    flex-wrap:wrap;
-
-    margin-top:32px;
+    margin-top:30px;
 
 }
-
 
 .btn{
 
     display:inline-block;
 
-    padding:14px 32px;
+    margin:8px;
 
-    border-radius:50px;
+    padding:13px 28px;
 
-    text-decoration:none;
-
-    font-weight:600;
-
-    transition:.35s;
-
-}
-
-
-.btn.primary{
+    border-radius:30px;
 
     background:white;
 
     color:#b94cff;
 
-}
+    text-decoration:none;
 
+    font-weight:600;
 
-.btn.outline{
-
-    color:white;
-
-    border:1px solid white;
+    transition:.3s;
 
 }
-
 
 .btn:hover{
 
-    transform:translateY(-6px);
+    transform:translateY(-5px);
 
-    box-shadow:
+    box-shadow:0 10px 25px rgba(255,255,255,.35);
 
-    0 15px 30px rgba(255,255,255,.3);
+}
+
+.btn.out{
+
+    background:transparent;
+
+    color:white;
+
+    border:2px solid white;
 
 }
 
 
 /* ================= SCROLL ================= */
 
-.scroll-down{
+.scroll{
 
     position:absolute;
 
@@ -566,80 +361,84 @@ nav a:hover{
 
     text-align:center;
 
-    font-size:12px;
-
-    color:white;
-
-    text-decoration:none;
-
-    animation:bounce 1.8s infinite;
+    animation:updown 1.8s infinite;
 
 }
-
-
-@keyframes bounce{
-
-    50%{
-
-        transform:translate(-50%,8px);
-
-    }
-
-}
-
 
 .mouse{
 
     width:27px;
 
-    height:43px;
+    height:44px;
+
+    margin:8px auto 0;
 
     border:2px solid white;
 
     border-radius:20px;
 
-    margin:8px auto;
-
 }
-
 
 .wheel{
 
-    width:4px;
+    width:5px;
 
-    height:8px;
+    height:9px;
+
+    margin:7px auto;
 
     background:white;
 
     border-radius:5px;
 
-    margin:7px auto;
-
     animation:wheel 1.5s infinite;
 
 }
 
-
 @keyframes wheel{
 
-    to{
+    0%{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+    100%{
 
         opacity:0;
 
-        transform:translateY(12px);
+        transform:translateY(14px);
+
+    }
+
+}
+
+@keyframes updown{
+
+    50%{
+
+        transform:translateX(-50%) translateY(8px);
 
     }
 
 }
 
 
-/* ================= RESPONSIVE ================= */
+/* ================= MOBILE ================= */
 
-@media(max-width:900px){
+@media(max-width:850px){
 
     header{
 
-        padding:15px 4%;
+        left:3%;
+
+        right:3%;
+
+        padding:15px 18px;
+
+        flex-direction:column;
 
         gap:15px;
 
@@ -649,30 +448,9 @@ nav a:hover{
 
         gap:12px;
 
-    }
+        flex-wrap:wrap;
 
-}
-
-
-@media(max-width:650px){
-
-    header{
-
-        position:relative;
-
-        flex-direction:column;
-
-    }
-
-    .hero{
-
-        padding-top:60px;
-
-    }
-
-    nav ul{
-
-        gap:9px;
+        justify-content:center;
 
     }
 
@@ -682,19 +460,15 @@ nav a:hover{
 
     }
 
-    .profile-box{
+    .hero{
 
-        width:170px;
-
-        height:170px;
+        padding:180px 5% 80px;
 
     }
 
-    .profile{
+    .hero-card{
 
-        width:155px;
-
-        height:155px;
+        padding:35px 20px;
 
     }
 
@@ -708,19 +482,7 @@ nav a:hover{
 <body>
 
 
-<!-- FLOATING DECORATION -->
-
-<div class="floating one"></div>
-
-<div class="floating two"></div>
-
-<div class="floating three"></div>
-
-
-<!-- NAVBAR -->
-
 <header>
-
 
 <a href="index.html" class="logo">
 
@@ -733,7 +495,6 @@ Portfolio
 
 <ul>
 
-
 <li>
 
 <a href="index.html">
@@ -743,7 +504,6 @@ Home
 </a>
 
 </li>
-
 
 <li>
 
@@ -755,7 +515,6 @@ About
 
 </li>
 
-
 <li>
 
 <a href="education.html">
@@ -765,7 +524,6 @@ Education
 </a>
 
 </li>
-
 
 <li>
 
@@ -777,7 +535,6 @@ Portfolio
 
 </li>
 
-
 <li>
 
 <a href="activities.html">
@@ -787,7 +544,6 @@ Activities
 </a>
 
 </li>
-
 
 <li>
 
@@ -799,27 +555,17 @@ Contact
 
 </li>
 
-
 </ul>
 
 </nav>
 
-
 </header>
 
 
-<!-- HERO -->
-
-<section class="hero">
+<main class="hero">
 
 
-<div class="hero-content">
-
-
-<div class="profile-box">
-
-
-<div class="profile-ring"></div>
+<div class="hero-card">
 
 
 <img
@@ -832,16 +578,6 @@ class="profile"
 
 
 >
-
-
-</div>
-
-
-<small>
-
-WELCOME TO MY PORTFOLIO
-
-</small>
 
 
 <h1>
@@ -860,9 +596,18 @@ Student Portfolio
 
 <p>
 
-สวัสดีค่ะ ยินดีต้อนรับเข้าสู่เว็บไซต์ Portfolio
-ของฉัน เว็บไซต์นี้รวบรวมข้อมูลเกี่ยวกับตัวฉัน
-ประวัติการศึกษา ผลงาน และกิจกรรมต่าง ๆ
+นักเรียนชั้นมัธยมศึกษาปีที่ 6
+
+</p>
+
+
+<p>
+
+ยินดีต้อนรับสู่เว็บไซต์ Portfolio ของฉัน
+
+<br>
+
+เว็บไซต์สำหรับรวบรวมประวัติ การศึกษา ผลงาน และกิจกรรม
 
 </p>
 
@@ -870,16 +615,16 @@ Student Portfolio
 <div class="buttons">
 
 
-<a href="about.html" class="btn primary">
+<a href="about.html" class="btn">
 
 About Me
 
 </a>
 
 
-<a href="portfolio.html" class="btn outline">
+<a href="portfolio.html" class="btn out">
 
-Explore Portfolio
+View Portfolio
 
 </a>
 
@@ -890,7 +635,10 @@ Explore Portfolio
 </div>
 
 
-<a href="#bottom" class="scroll-down">
+</main>
+
+
+<div class="scroll">
 
 Scroll Down
 
@@ -900,13 +648,7 @@ Scroll Down
 
 </div>
 
-</a>
-
-
-</section>
-
-
-<div id="bottom"></div>
+</div>
 
 
 </body>
