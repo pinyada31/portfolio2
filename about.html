@@ -13,6 +13,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+
 <style>
 
 *{
@@ -43,13 +44,13 @@ body{
 
     background-size:400% 400%;
 
-    animation:gradientMove 14s ease infinite;
+    animation:bg 14s ease infinite;
 
     overflow-x:hidden;
 
 }
 
-@keyframes gradientMove{
+@keyframes bg{
 
     0%{
         background-position:0% 50%;
@@ -72,8 +73,8 @@ body::after{
 
     position:fixed;
 
-    width:450px;
-    height:450px;
+    width:500px;
+    height:500px;
 
     border-radius:50%;
 
@@ -81,18 +82,18 @@ body::after{
 
     opacity:.45;
 
-    z-index:-2;
+    z-index:-1;
 
 }
 
 body::before{
 
-    background:#ff62c5;
+    background:#ff63c5;
 
-    top:-160px;
-    left:-130px;
+    top:-180px;
+    left:-150px;
 
-    animation:auroraOne 12s ease-in-out infinite;
+    animation:aurora1 12s ease-in-out infinite;
 
 }
 
@@ -100,14 +101,14 @@ body::after{
 
     background:#806dff;
 
-    right:-150px;
-    bottom:-170px;
+    right:-160px;
+    bottom:-180px;
 
-    animation:auroraTwo 14s ease-in-out infinite;
+    animation:aurora2 14s ease-in-out infinite;
 
 }
 
-@keyframes auroraOne{
+@keyframes aurora1{
 
     50%{
         transform:translate(150px,100px);
@@ -115,10 +116,10 @@ body::after{
 
 }
 
-@keyframes auroraTwo{
+@keyframes aurora2{
 
     50%{
-        transform:translate(-130px,-100px);
+        transform:translate(-150px,-100px);
     }
 
 }
@@ -130,10 +131,11 @@ header{
 
     position:fixed;
 
-    top:0;
-    left:0;
+    top:15px;
 
-    width:100%;
+    left:7%;
+
+    right:7%;
 
     z-index:1000;
 
@@ -143,13 +145,17 @@ header{
 
     align-items:center;
 
-    padding:18px 7%;
+    padding:18px 30px;
 
-    background:rgba(255,255,255,.10);
+    border-radius:20px;
+
+    background:rgba(255,255,255,.16);
+
+    border:1px solid rgba(255,255,255,.35);
 
     backdrop-filter:blur(18px);
 
-    border-bottom:1px solid rgba(255,255,255,.20);
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
 
 }
 
@@ -169,13 +175,9 @@ nav ul{
 
     display:flex;
 
-    gap:22px;
+    gap:28px;
 
     list-style:none;
-
-    flex-wrap:wrap;
-
-    justify-content:center;
 
 }
 
@@ -185,51 +187,53 @@ nav a{
 
     text-decoration:none;
 
-    font-size:15px;
-
     transition:.3s;
 
 }
 
 nav a:hover{
 
-    color:#ffe3f6;
+    color:#ffe0f5;
 
     text-shadow:0 0 12px white;
 
 }
 
 
-/* ================= PAGE ================= */
+/* ================= ABOUT PAGE ================= */
 
 .about-page{
 
     min-height:100vh;
 
-    padding:150px 7% 90px;
+    padding:150px 7% 80px;
 
 }
 
+
+/* ================= TITLE ================= */
 
 .title{
 
     text-align:center;
 
-    margin-bottom:55px;
+    margin-bottom:45px;
 
 }
 
 .title small{
 
-    letter-spacing:4px;
+    font-size:15px;
 
-    font-size:12px;
+    letter-spacing:3px;
+
+    font-weight:600;
 
 }
 
 .title h1{
 
-    font-size:clamp(42px,7vw,65px);
+    font-size:clamp(48px,7vw,75px);
 
     margin:10px 0;
 
@@ -249,20 +253,20 @@ nav a:hover{
 
     -webkit-background-clip:text;
 
-    color:transparent;
+    -webkit-text-fill-color:transparent;
 
 }
 
 .title p{
 
-    opacity:.9;
+    font-size:20px;
 
 }
 
 
-/* ================= ABOUT GRID ================= */
+/* ================= ABOUT CARD ================= */
 
-.about-container{
+.about-card{
 
     max-width:1100px;
 
@@ -270,133 +274,135 @@ nav a:hover{
 
     display:grid;
 
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:300px 1fr;
 
-    gap:25px;
+    gap:45px;
 
-}
+    align-items:center;
 
+    padding:40px;
 
-.card{
+    background:rgba(255,255,255,.16);
 
-    padding:35px;
+    border:1px solid rgba(255,255,255,.35);
 
-    background:rgba(255,255,255,.14);
-
-    border:1px solid rgba(255,255,255,.25);
+    border-radius:30px;
 
     backdrop-filter:blur(18px);
 
-    border-radius:28px;
-
-    box-shadow:0 20px 45px rgba(0,0,0,.16);
-
-    transition:.35s;
+    box-shadow:0 25px 60px rgba(0,0,0,.16);
 
 }
 
-.card:hover{
 
-    transform:translateY(-8px);
+/* ================= PROFILE ================= */
 
-    background:rgba(255,255,255,.20);
+.about-image{
+
+    text-align:center;
 
 }
 
-.card h2{
+.about-image img{
+
+    width:250px;
+
+    height:250px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:5px solid white;
+
+    box-shadow:0 0 35px rgba(255,255,255,.4);
+
+}
+
+
+/* ================= TEXT ================= */
+
+.about-content h2{
+
+    font-size:35px;
 
     margin-bottom:18px;
 
-    font-size:25px;
-
 }
 
-.card p{
+.about-content p{
+
+    font-size:18px;
 
     line-height:2;
-
-}
-
-.info-list{
-
-    list-style:none;
-
-    line-height:2.5;
-
-}
-
-
-/* ================= SKILLS ================= */
-
-.skills{
-
-    max-width:1100px;
-
-    margin:25px auto 0;
-
-    padding:35px;
-
-    background:rgba(255,255,255,.14);
-
-    border:1px solid rgba(255,255,255,.25);
-
-    backdrop-filter:blur(18px);
-
-    border-radius:28px;
-
-}
-
-.skills h2{
-
-    margin-bottom:25px;
-
-}
-
-.skill{
 
     margin-bottom:20px;
 
 }
 
-.skill-title{
 
-    display:flex;
+/* ================= INFO ================= */
 
-    justify-content:space-between;
+.info-box{
 
-    margin-bottom:8px;
+    display:grid;
 
-}
+    grid-template-columns:1fr 1fr;
 
-.skill-bar{
+    gap:15px;
 
-    height:10px;
-
-    border-radius:20px;
-
-    background:rgba(255,255,255,.2);
-
-    overflow:hidden;
+    margin-top:25px;
 
 }
 
-.skill-fill{
+.info{
 
-    height:100%;
+    padding:18px;
 
-    border-radius:20px;
+    border-radius:18px;
 
-    background:
+    background:rgba(255,255,255,.13);
 
-    linear-gradient(
+    border:1px solid rgba(255,255,255,.22);
 
-        90deg,
+}
 
-        white,
+.info strong{
 
-        #ffc2e9
+    display:block;
 
-    );
+    margin-bottom:5px;
+
+}
+
+.info span{
+
+    font-size:16px;
+
+}
+
+
+/* ================= QUOTE ================= */
+
+.quote{
+
+    max-width:900px;
+
+    margin:40px auto 0;
+
+    padding:30px;
+
+    text-align:center;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.14);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    font-size:22px;
+
+    font-style:italic;
 
 }
 
@@ -405,24 +411,26 @@ nav a:hover{
 
 footer{
 
+    padding:25px;
+
     text-align:center;
 
-    padding:30px;
-
     background:rgba(0,0,0,.12);
-
-    line-height:1.8;
 
 }
 
 
-/* ================= RESPONSIVE ================= */
+/* ================= MOBILE ================= */
 
-@media(max-width:700px){
+@media(max-width:850px){
 
     header{
 
-        position:relative;
+        left:3%;
+
+        right:3%;
+
+        padding:15px 18px;
 
         flex-direction:column;
 
@@ -432,7 +440,11 @@ footer{
 
     nav ul{
 
-        gap:10px;
+        gap:12px;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
 
     }
 
@@ -442,9 +454,35 @@ footer{
 
     }
 
-    .about-container{
+    .about-page{
+
+        padding:180px 5% 60px;
+
+    }
+
+    .about-card{
 
         grid-template-columns:1fr;
+
+        text-align:center;
+
+        padding:25px 20px;
+
+    }
+
+    .about-image img{
+
+        width:200px;
+
+        height:200px;
+
+    }
+
+    .info-box{
+
+        grid-template-columns:1fr;
+
+        text-align:left;
 
     }
 
@@ -460,7 +498,6 @@ footer{
 
 <header>
 
-
 <a href="index.html" class="logo">
 
 Portfolio
@@ -472,7 +509,6 @@ Portfolio
 
 <ul>
 
-
 <li>
 
 <a href="index.html">
@@ -482,7 +518,6 @@ Home
 </a>
 
 </li>
-
 
 <li>
 
@@ -494,7 +529,6 @@ About
 
 </li>
 
-
 <li>
 
 <a href="education.html">
@@ -504,7 +538,6 @@ Education
 </a>
 
 </li>
-
 
 <li>
 
@@ -516,7 +549,6 @@ Portfolio
 
 </li>
 
-
 <li>
 
 <a href="activities.html">
@@ -526,7 +558,6 @@ Activities
 </a>
 
 </li>
-
 
 <li>
 
@@ -538,11 +569,9 @@ Contact
 
 </li>
 
-
 </ul>
 
 </nav>
-
 
 </header>
 
@@ -550,11 +579,11 @@ Contact
 <main class="about-page">
 
 
-<div class="title">
+<section class="title">
 
 <small>
 
-GET TO KNOW ME
+✦ GET TO KNOW ME ✦
 
 </small>
 
@@ -568,184 +597,118 @@ About Me
 
 <p>
 
-ทำความรู้จักตัวตน ความสนใจ และเป้าหมายของฉัน
+ทำความรู้จักกับฉันมากขึ้น 💗
 
 </p>
+
+</section>
+
+
+<section class="about-card">
+
+
+<div class="about-image">
+
+
+<img
+
+src="images/profile.jpg"
+
+alt="Profile"
+
+>
+
 
 </div>
 
 
-<div class="about-container">
+<div class="about-content">
 
-
-<div class="card">
 
 <h2>
 
-🌸 About Me
+สวัสดีค่ะ 👋
 
 </h2>
 
 
 <p>
 
-สวัสดีค่ะ ฉันชื่อ ภิญญดา บุญเจริญ
+ฉันชื่อ <strong>ภิญญดา บุญเจริญ</strong>
 
-ปัจจุบันกำลังศึกษาอยู่ชั้นมัธยมศึกษาปีที่ 6
+เป็นนักเรียนชั้นมัธยมศึกษาปีที่ 6
 
-ฉันเป็นคนที่สนใจการเรียนรู้สิ่งใหม่ ๆ
+ที่มีความสนใจในการเรียนรู้สิ่งใหม่ ๆ
 
-ชอบพัฒนาตัวเอง และสนใจการสร้างสรรค์ผลงาน
-
-ที่สามารถนำไปต่อยอดในอนาคตได้
+และพัฒนาตนเองอยู่เสมอ
 
 </p>
 
-</div>
+
+<p>
+
+เว็บไซต์ Portfolio นี้จัดทำขึ้นเพื่อรวบรวม
+
+ประวัติส่วนตัว ประวัติการศึกษา
+
+ผลงาน เกียรติบัตร และกิจกรรมต่าง ๆ
+
+ที่แสดงถึงความสนใจและความสามารถของฉัน
+
+</p>
 
 
-<div class="card">
-
-<h2>
-
-💡 My Interests
-
-</h2>
+<div class="info-box">
 
 
-<ul class="info-list">
+<div class="info">
 
-<li>
-🎨 การออกแบบและความคิดสร้างสรรค์
-</li>
+<strong>👩 ชื่อ</strong>
 
-<li>
-💻 เทคโนโลยีและการสร้างเว็บไซต์
-</li>
-
-<li>
-📚 การเรียนรู้สิ่งใหม่ ๆ
-</li>
-
-<li>
-🌱 การพัฒนาตัวเอง
-</li>
-
-</ul>
-
-</div>
+<span>ภิญญดา บุญเจริญ</span>
 
 </div>
 
 
-<div class="skills">
+<div class="info">
 
+<strong>🎓 ระดับการศึกษา</strong>
 
-<h2>
-
-⚡ My Skills
-
-</h2>
-
-
-<div class="skill">
-
-<div class="skill-title">
-
-<span>
-
-HTML / CSS
-
-</span>
-
-<span>
-
-80%
-
-</span>
+<span>มัธยมศึกษาปีที่ 6</span>
 
 </div>
 
 
-<div class="skill-bar">
+<div class="info">
 
-<div
-class="skill-fill"
-style="width:80%;"
->
+<strong>💡 ความสนใจ</strong>
 
-</div>
-
-</div>
+<span>การเรียนรู้และพัฒนาตนเอง</span>
 
 </div>
 
 
-<div class="skill">
+<div class="info">
 
-<div class="skill-title">
+<strong>🌟 เป้าหมาย</strong>
 
-<span>
-
-Creative Thinking
-
-</span>
-
-<span>
-
-85%
-
-</span>
+<span>ศึกษาต่อในระดับมหาวิทยาลัย</span>
 
 </div>
 
 
-<div class="skill-bar">
-
-<div
-class="skill-fill"
-style="width:85%;"
->
-
 </div>
 
-</div>
 
 </div>
 
 
-<div class="skill">
-
-<div class="skill-title">
-
-<span>
-
-Teamwork
-
-</span>
-
-<span>
-
-90%
-
-</span>
-
-</div>
+</section>
 
 
-<div class="skill-bar">
+<div class="quote">
 
-<div
-class="skill-fill"
-style="width:90%;"
->
-
-</div>
-
-</div>
-
-</div>
-
+“ทุกความสำเร็จ เริ่มต้นจากการกล้าที่จะเรียนรู้” ✨
 
 </div>
 
@@ -757,14 +720,7 @@ style="width:90%;"
 
 <p>
 
-© 2026 ภิญญดา บุญเจริญ
-
-</p>
-
-
-<p>
-
-Student Portfolio
+© 2026 ภิญญดา บุญเจริญ | Student Portfolio
 
 </p>
 
