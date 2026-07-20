@@ -9,6 +9,7 @@
 <title>Portfolio | My Works</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -16,6 +17,7 @@
 
 <style>
 
+/* ================= RESET ================= */
 
 *{
 
@@ -68,6 +70,8 @@ body{
 }
 
 
+/* ================= BACKGROUND ================= */
+
 @keyframes bg{
 
     0%{
@@ -90,8 +94,6 @@ body{
 
 }
 
-
-/* แสง Aurora */
 
 body::before,
 
@@ -166,7 +168,6 @@ body::after{
 
 /* ================= NAVBAR ================= */
 
-
 header{
 
     position:fixed;
@@ -230,8 +231,6 @@ nav a{
 
     text-decoration:none;
 
-    font-weight:400;
-
     transition:.3s;
 
 }
@@ -248,24 +247,22 @@ nav a:hover{
 
 /* ================= PAGE ================= */
 
-
 .portfolio-page{
 
     min-height:100vh;
 
-    padding:150px 7% 0;
+    padding:150px 7% 90px;
 
 }
 
 
 /* ================= TITLE ================= */
 
-
 .title{
 
     text-align:center;
 
-    margin-bottom:45px;
+    margin-bottom:60px;
 
 }
 
@@ -283,7 +280,7 @@ nav a:hover{
 
 .title h1{
 
-    font-size:clamp(48px,7vw,75px);
+    font-size:clamp(50px,7vw,80px);
 
     margin:10px 0;
 
@@ -315,67 +312,102 @@ nav a:hover{
 }
 
 
-/* ================= CERTIFICATE CARD ================= */
+/* ================= WORKS ================= */
 
+.works{
 
-.certificate-card{
-
-    max-width:1100px;
+    max-width:1150px;
 
     margin:auto;
 
-    padding:30px;
+    display:flex;
+
+    flex-direction:column;
+
+    gap:35px;
+
+}
+
+
+/* ================= WORK CARD ================= */
+
+.work-card{
 
     display:grid;
 
     grid-template-columns:1fr 1fr;
 
-    gap:40px;
+    gap:35px;
 
     align-items:center;
 
-    background:rgba(255,255,255,.17);
+    padding:35px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.16);
 
     border:1px solid rgba(255,255,255,.35);
 
-    border-radius:28px;
-
     backdrop-filter:blur(18px);
 
-    box-shadow:0 25px 60px rgba(0,0,0,.18);
-
-}
-
-
-/* ================= IMAGE ================= */
-
-
-.certificate-image{
-
-    width:100%;
-
-    max-height:570px;
-
-    object-fit:contain;
-
-    border-radius:18px;
-
-    background:white;
-
-    padding:8px;
-
-    box-shadow:
-
-    0 10px 30px rgba(0,0,0,.2),
-
-    0 0 25px rgba(255,255,255,.3);
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
 
     transition:.4s;
 
 }
 
 
-.certificate-image:hover{
+.work-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+
+        0 25px 60px rgba(0,0,0,.2),
+
+        0 0 30px rgba(255,255,255,.18);
+
+}
+
+
+/* ================= IMAGE ================= */
+
+.work-image{
+
+    width:100%;
+
+    height:350px;
+
+    padding:12px;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.8);
+
+    overflow:hidden;
+
+}
+
+
+.work-image img{
+
+    width:100%;
+
+    height:100%;
+
+    display:block;
+
+    object-fit:contain;
+
+    border-radius:14px;
+
+    transition:.5s;
+
+}
+
+
+.work-card:hover .work-image img{
 
     transform:scale(1.03);
 
@@ -384,10 +416,9 @@ nav a:hover{
 
 /* ================= DETAILS ================= */
 
+.work-details{
 
-.certificate-details{
-
-    padding:20px;
+    padding:10px;
 
 }
 
@@ -396,7 +427,9 @@ nav a:hover{
 
     display:inline-block;
 
-    padding:10px 22px;
+    padding:10px 20px;
+
+    margin-bottom:20px;
 
     border-radius:30px;
 
@@ -414,125 +447,47 @@ nav a:hover{
 
     font-weight:600;
 
-    margin-bottom:25px;
-
-    box-shadow:0 5px 20px rgba(190,60,220,.3);
-
 }
 
 
-.certificate-details h2{
+.work-details h2{
 
-    font-size:32px;
+    font-size:clamp(27px,4vw,42px);
+
+    line-height:1.3;
 
     margin-bottom:20px;
 
 }
 
 
-.line{
+.work-details p{
 
-    width:100%;
+    font-size:17px;
 
-    height:2px;
+    line-height:1.9;
 
-    margin-bottom:20px;
+    margin-bottom:12px;
 
-    background:
-
-    linear-gradient(
-
-        90deg,
-
-        transparent,
-
-        #ff72dc,
-
-        transparent
-
-    );
+    opacity:.95;
 
 }
 
 
-.certificate-details>p{
-
-    font-size:18px;
-
-    line-height:2;
-
-    margin-bottom:25px;
-
-}
-
-
-/* ================= INFO BOX ================= */
-
-
-.info-box{
-
-    padding:22px;
-
-    border-radius:20px;
-
-    background:rgba(255,255,255,.13);
-
-    border:1px solid rgba(255,255,255,.25);
-
-}
-
-
-.info-item{
+.info-line{
 
     display:flex;
 
-    gap:18px;
+    align-items:center;
 
-    align-items:flex-start;
-
-    margin-bottom:20px;
-
-}
-
-
-.info-item:last-child{
-
-    margin-bottom:0;
-
-}
-
-
-.info-icon{
-
-    font-size:27px;
-
-}
-
-
-.info-item strong{
-
-    display:block;
-
-    font-size:15px;
-
-    margin-bottom:3px;
-
-}
-
-
-.info-item span{
-
-    font-size:16px;
+    gap:10px;
 
 }
 
 
 /* ================= FOOTER ================= */
 
-
 footer{
-
-    margin-top:25px;
 
     padding:25px;
 
@@ -543,31 +498,17 @@ footer{
 }
 
 
-footer p{
-
-    margin:5px;
-
-}
-
-
-/* ================= RESPONSIVE ================= */
-
+/* ================= MOBILE ================= */
 
 @media(max-width:850px){
 
     header{
 
-        position:relative;
+        left:3%;
 
-        top:0;
+        right:3%;
 
-        left:0;
-
-        right:0;
-
-        margin:0;
-
-        border-radius:0;
+        padding:15px 18px;
 
         flex-direction:column;
 
@@ -596,30 +537,35 @@ footer p{
 
     .portfolio-page{
 
-        padding:45px 5% 0;
+        padding:180px 5% 60px;
 
     }
 
 
-    .certificate-card{
+    .work-card{
 
         grid-template-columns:1fr;
 
-        padding:20px;
+        padding:22px;
 
     }
 
 
-    .certificate-details{
+    .work-image{
 
-        padding:5px;
+        height:300px;
 
     }
 
 
-    .certificate-details h2{
+}
 
-        font-size:26px;
+
+@media(max-width:500px){
+
+    .work-image{
+
+        height:240px;
 
     }
 
@@ -634,6 +580,8 @@ footer p{
 <body>
 
 
+<!-- ================= NAVBAR ================= -->
+
 <header>
 
 
@@ -646,9 +594,7 @@ Portfolio
 
 <nav>
 
-
 <ul>
-
 
 <li>
 
@@ -715,15 +661,15 @@ Contact
 
 </li>
 
-
 </ul>
-
 
 </nav>
 
 
 </header>
 
+
+<!-- ================= MAIN ================= -->
 
 <main class="portfolio-page">
 
@@ -755,20 +701,23 @@ Portfolio
 </section>
 
 
-<section class="certificate-card">
+<section class="works">
 
 
-<div>
+<!-- ================= WORK 1 ================= -->
+
+
+<article class="work-card">
+
+
+<div class="work-image">
 
 
 <img
 
 src="IMG_4258.jpeg"
 
-alt="Certificate of Completion"
-
-class="certificate-image"
-
+alt="Certificate Spoken English for Pharmacist"
 
 >
 
@@ -776,7 +725,7 @@ class="certificate-image"
 </div>
 
 
-<div class="certificate-details">
+<div class="work-details">
 
 
 <span class="badge">
@@ -793,142 +742,118 @@ Spoken English for Pharmacist
 </h2>
 
 
-<div class="line"></div>
-
-
 <p>
 
 ผ่านการเรียนหลักสูตรออนไลน์
 
-<br>
+เรื่องภาษาอังกฤษสำหรับเภสัชกร
 
-
-Spoken English for Pharmacist
-
-<br>
-
-
-ระยะเวลา 5 ชั่วโมง
-
-<br>
-
-
-จากมหาวิทยาลัยนเรศวร
-
-<br>
-
-
-ผ่านระบบ Thai MOOC
+(Spoken English for Pharmacist)
 
 </p>
 
 
-<div class="info-box">
+<p class="info-line">
+
+📚 Thai MOOC
+
+</p>
 
 
-<div class="info-item">
+<p class="info-line">
+
+⏱️ ระยะเวลา 5 ชั่วโมง
+
+</p>
 
 
-<div class="info-icon">
+<p class="info-line">
 
-📅
+📅 วันที่ 5 กันยายน 2568
+
+</p>
+
 
 </div>
 
 
-<div>
+</article>
 
 
-<strong>
-
-วันที่ได้รับ
-
-</strong>
+<!-- ================= WORK 2 ================= -->
 
 
-<span>
+<article class="work-card">
 
-05 กันยายน 2568
+
+<div class="work-image">
+
+
+<img
+
+src="stem-camp.jpg"
+
+alt="STEM Camp Certificate"
+
+>
+
+
+</div>
+
+
+<div class="work-details">
+
+
+<span class="badge">
+
+🚀 STEM ACTIVITY
 
 </span>
 
 
-</div>
+<h2>
+
+ค่าย STEM นักวิทย์คิดสร้างสรรค์
+
+</h2>
+
+
+<p>
+
+เข้าร่วมกิจกรรมค่าย STEM
+
+นักวิทย์คิดสร้างสรรค์
+
+ประจำปีการศึกษา 2567
+
+</p>
+
+
+<p class="info-line">
+
+📅 วันที่ 21 และ 28 มิถุนายน พ.ศ. 2567
+
+</p>
+
+
+<p class="info-line">
+
+🏫 โรงเรียนพานทอง
+
+</p>
+
+
+<p class="info-line">
+
+🔬 กิจกรรมด้านวิทยาศาสตร์และเทคโนโลยี
+
+</p>
 
 
 </div>
 
 
-<div class="info-item">
-
-
-<div class="info-icon">
-
-🏛️
-
-</div>
-
-
-<div>
-
-
-<strong>
-
-สถาบัน
-
-</strong>
-
-
-<span>
-
-มหาวิทยาลัยนเรศวร
-
-</span>
-
-
-</div>
-
-
-</div>
-
-
-<div class="info-item">
-
-
-<div class="info-icon">
-
-⏱️
-
-</div>
-
-
-<div>
-
-
-<strong>
-
-ระยะเวลา
-
-</strong>
-
-
-<span>
-
-5 ชั่วโมง
-
-</span>
-
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-</div>
+</article>
 
 
 </section>
@@ -947,16 +872,10 @@ Spoken English for Pharmacist
 </p>
 
 
-<p>
-
-💗 ✨ 🎓
-
-</p>
-
-
 </footer>
 
 
 </body>
+
 
 </html>
